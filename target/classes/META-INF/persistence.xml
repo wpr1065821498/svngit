@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <!--持久化单元：一个持久化单元相当于一个连接池-->
+    <persistence-unit name="cn.itsource.jpa" transaction-type="RESOURCE_LOCAL">
+        <!-- ALL：所有的实体类都被缓存 -->
+        <!-- NONE：所有的实体类都不被缓存. -->
+        <!-- ENABLE_SELECTIVE：标识 @Cacheable(true) 注解的实体类将被缓存 -->
+        <!-- DISABLE_SELECTIVE：缓存除标识 @Cacheable(false) 以外的所有实体类 -->
+        <!-- UNSPECIFIED：默认值，JPA 产品默认值将被使用 -->
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <!--配置属性-->
+        <properties>
+<!--
+            数据库存储引擎：
+                    innodb: 它支持事务，所以性能较低，但是较安全
+                    myIsam: 它不支持事务,所以性能较高，但是不安全-->
+
+            <!--连接数据库用户名-->
+            <property name="hibernate.connection.username" value="root"/>
+            <!--连接数据库密码-->
+            <property name="hibernate.connection.password" value="admin"/>
+            <!--连接数据库url-->
+            <property name="hibernate.connection.url" value="jdbc:mysql:///jpatest"/>
+            <!--连接数据库驱动-->
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <!--使用的方言-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <!--是否显示sql语句-->
+            <property name="hibernate.show_sql" value="true"/>
+            <!--建表策略-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+
+
+        </properties>
+    </persistence-unit>
+</persistence>
