@@ -3,7 +3,7 @@ package cn.itsource.util;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-//上传传输
+//上传传输，，在测试一波
 public class JPAUtil {
     private static EntityManagerFactory entityManagerFactory;
 
