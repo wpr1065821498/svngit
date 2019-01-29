@@ -1,7 +1,7 @@
 package cn.itsource._06one2one2;
 
 import javax.persistence.*;
-//数据的传输
+//数据的传输已修改
 @Entity
 @Table(name="t_qqzone")
 public class QQZone {
